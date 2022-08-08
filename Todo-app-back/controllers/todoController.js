@@ -1,3 +1,4 @@
+const mongoose = require("mongoose");
 const Todo = require('../models/todo');
 
 const getTodos = async (req,res) => {
@@ -15,6 +16,14 @@ const createTodo = async (req,res) => {
     }).catch((err)=> {
         res.json({error: err.message});
     })
+}
+
+const updateTodo = async (req,res) => {
+    const {id} = req.params;
+    const {title,content} =  req.body;
+    if(!mongoose.Types.ObjectId.isValid(id)) {
+
+    }
 }
 
 module.exports = {
