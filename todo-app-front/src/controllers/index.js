@@ -18,8 +18,28 @@ const createTodo = async (todo)=>{
     }
  }
 
+const updateTodo = async (id, todo)=>{
+ try{
+   const {data} = await api.updateTodo(id,todo);
+   return data;
+ }catch(error) {
+  console.log(error);
+ }
+} 
+
+const deleteTodo = async (id)=>{
+  try{
+    const {data} = await api.deleteTodo(id);
+    return data;
+  }catch(error) {
+   console.log(error);
+  }
+ } 
+
 
 export {
     getTodos,
-    createTodo
+    createTodo,
+    updateTodo,
+    deleteTodo
 }

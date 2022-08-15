@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Preloader from "./components/Preloader";
-import { createTodo, getTodos } from "./controllers";
+import { createTodo, deleteTodo, getTodos, updateTodo } from "./controllers";
 
 function App() {
   const [todo, setTodo] = useState({ title: "", content: "" });
@@ -9,7 +9,7 @@ function App() {
 
   useEffect(() => {
     GetTodos();
-  }, [todos]);
+  }, [activeId]);
 
   useEffect(() => {
     let currentTodo =
@@ -29,17 +29,30 @@ function App() {
     setTodos(result);
   };
 
-  const CreateTodo = async (e) => {
+  const SubmitTodo = async (e) => {
     e.preventDefault();
 
-    await createTodo(todo);
+    if(activeId === "") {
+       const result =  await createTodo(todo);
+       setTodos([...todos, result]);
+    }else {
+      await updateTodo(activeId, todo);
+    }
     Clear();
   };
+
+  const DeleteTodo = async(id) => {
+    await deleteTodo(id);
+    Clear();
+    const todosCopy = [...todos];
+    todosCopy.filter(todo => todo._id !== id);
+    setTodos(todosCopy);
+  }
 
   return (
     <div className="container">
       <div className="row">
-        <form className="col s12" onSubmit={CreateTodo}>
+        <form className="col s12" onSubmit={SubmitTodo}>
           <div className="row">
             <div className="input-field col s6">
               <i className="material-icons prefix">title</i>
@@ -85,10 +98,10 @@ function App() {
               onClick={() => setActiveId(todo._id)}
             >
               <div>
-                <h5>{todo.title}</h5>
+                <h5 style={{cursor:"pointer"}}>{todo.title}</h5>
                 <p>
                   {todo.content}
-                  <a href="#!" className="secondary-content">
+                  <a style={{cursor:"pointer"}} onClick={()=> DeleteTodo(todo._id)} className="secondary-content">
                     <i className="material-icons">delete</i>
                   </a>
                 </p>
