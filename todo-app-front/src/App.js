@@ -82,7 +82,7 @@ function App() {
             </div>
           </div>
           <div className="row right-align">
-          <button className="waves-effect waves-light btn" type="reset" onClick={Clear}>Clear</button>
+          <button className="waves-effect waves-light btn blue" type="reset" onClick={Clear}>Clear</button>
             <button className="waves-effect waves-light btn">Submit</button>
           </div>
         </form>
