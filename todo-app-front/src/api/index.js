@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = "http://localhost:3000/todos";
+const url = "https://todoss-app.herokuapp.com/todos";
 
 const getTodos = () => axios.get(url);
 const createTodo = todo => axios.post(url, todo);

@@ -111,3 +111,5 @@ dist
 
 # Documentation
 out/
+# Local Netlify folder
+.netlify
