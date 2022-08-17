@@ -2,13 +2,11 @@
 
 This is a To do app 
 ---
-## Backend
+## Demo
 
-  [a link](https://todoss-app.herokuapp.com/)
-  
-## Frontend
-
-  [a link](https://62fcd676fe5cf7186a2c29e4--the-awesome-abdelouahedaitessaih-site.netlify.app/)
+  [Backend](https://todoss-app.herokuapp.com/)
+ 
+  [Frontend](https://62fcd676fe5cf7186a2c29e4--the-awesome-abdelouahedaitessaih-site.netlify.app/)
 
 ## Requirements
 
