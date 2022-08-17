@@ -4,9 +4,9 @@ This is a To do app
 ---
 ## Demo
 
-  [Backend](https://todoss-app.herokuapp.com/)
+  - [Backend](https://todoss-app.herokuapp.com/)
  
-  [Frontend](https://62fcd676fe5cf7186a2c29e4--the-awesome-abdelouahedaitessaih-site.netlify.app/)
+  - [Frontend](https://62fcd676fe5cf7186a2c29e4--the-awesome-abdelouahedaitessaih-site.netlify.app/)
 
 ## Requirements
 
